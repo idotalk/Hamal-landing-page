@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamal Transport - אפליקציית ניהול הסעות</title>
+    <title>Hamal Transport - אפליקציית הניהול למשימות השינוע</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #ffffff;
+            background: #f8fafc;
             color: #1a1a1a;
             line-height: 1.6;
         }
@@ -82,7 +82,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(74, 144, 226, 0.75) 50%, rgba(59, 130, 246, 0.85) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -112,13 +112,13 @@
 
         /* Download Section */
         .download-section {
-            background: white;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
             padding: 80px 20px;
             margin-top: -60px;
             border-radius: 24px 24px 0 0;
             position: relative;
             z-index: 2;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 -10px 40px rgba(74, 144, 226, 0.12);
         }
 
         .section-title {
@@ -147,14 +147,15 @@
         }
 
         .download-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border: 1px solid #e0f2fe;
             border-radius: 16px;
             padding: 50px 40px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.08);
         }
 
         .download-card::before {
@@ -164,7 +165,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #4a90e2, #2563eb);
+            background: linear-gradient(90deg, #3b82f6, #2563eb, #6366f1);
             transform: scaleX(0);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -175,8 +176,8 @@
 
         .download-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(74, 144, 226, 0.15);
-            border-color: #4a90e2;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
+            border-color: #bfdbfe;
         }
 
         .download-card h3 {
@@ -214,7 +215,7 @@
         }
 
         .coming-soon-badge {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f97316 100%);
             color: white;
             padding: 12px 28px;
             border-radius: 8px;
@@ -222,13 +223,13 @@
             display: inline-block;
             font-size: 15px;
             letter-spacing: 0.3px;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+            box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4);
         }
 
         /* Features Section */
         .features-section {
             padding: 100px 20px;
-            background: #fafbfc;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
         }
 
         .features-grid {
@@ -239,18 +240,20 @@
         }
 
         .feature-card {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
             padding: 40px 30px;
             border-radius: 12px;
             text-align: center;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #dbeafe;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
         }
 
         .feature-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-            border-color: #4a90e2;
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.2);
+            border-color: #93c5fd;
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
         }
 
         .feature-icon {
@@ -260,7 +263,10 @@
         }
 
         .feature-card h3 {
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 20px;
             margin-bottom: 12px;
             font-weight: 600;
@@ -275,7 +281,7 @@
 
         /* Tutorial Section */
         .tutorial-section {
-            background: white;
+            background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
             padding: 100px 20px;
         }
 
@@ -291,20 +297,22 @@
             align-items: start;
             gap: 28px;
             padding: 36px;
-            background: #fafbfc;
+            background: white;
             border-radius: 12px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #fde68a;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(245, 158, 11, 0.1);
         }
 
         .step:hover {
-            background: white;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            border-color: #4a90e2;
+            background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+            border-color: #fbbf24;
+            transform: translateX(-4px);
         }
 
         .step-number {
-            background: linear-gradient(135deg, #4a90e2 0%, #2563eb 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
             color: white;
             min-width: 48px;
             height: 48px;
@@ -315,7 +323,7 @@
             font-weight: 700;
             font-size: 20px;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
         }
 
         .step-content h3 {
@@ -345,8 +353,9 @@
         }
 
         .warning-box {
-            background: #fef3c7;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-color: #fbbf24;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
         }
 
         .warning-box strong {
@@ -364,8 +373,9 @@
         }
 
         .tip-box {
-            background: #dbeafe;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
         }
 
         .tip-box strong {
@@ -384,7 +394,7 @@
 
         /* Footer */
         .footer {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: #e5e7eb;
             text-align: center;
             padding: 50px 20px;
@@ -456,12 +466,12 @@
     </header>
 
     <section class="hero">
-        <img src="images/banner.jpg" alt="Hamal Banner" class="hero-banner">
+        <img src="images/banner.png" alt="Hamal Banner" class="hero-banner">
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content">
-                    <h1>אפליקציית ניהול הסעות</h1>
-                    <p>פתרון מקצועי וחכם לניהול הסעות עבור ארגון חמ״ל</p>
+                    <h1>אפליקציית ניהול שינועים</h1>
+                    <p>פתרון מקצועי וחכם לניהול שינועים עבור ארגון החמ״ל האזרחי - אחים ואחיות לישראל</p>
                 </div>
             </div>
         </div>
@@ -470,13 +480,13 @@
     <section class="download-section">
         <div class="container">
             <h2 class="section-title">הורידו את האפליקציה</h2>
-            <p class="section-subtitle">התחילו לנהל הסעות בצורה מקצועית ויעילה</p>
+            <p class="section-subtitle">התחילו לנהל שינועים בצורה מקצועית ויעילה</p>
             
             <div class="download-cards">
                 <div class="download-card">
                     <h3>Android</h3>
                     <p>זמינה להורדה</p>
-                    <a href="app-release.apk" download="HamalTransport.apk">
+                    <a href="Hamal.apk" download="HamalTransport.apk">
                         <img src="images/android-download.png" alt="הורד Android APK" class="download-badge">
                     </a>
                     <p class="version-info">גרסה 1.0</p>
@@ -515,7 +525,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>דוחות ומעקב</h3>
-                    <p>מעקב אחר הסעות והפקת דוחות מפורטים</p>
+                    <p>מעקב אחר שינועים והפקת דוחות מפורטים</p>
                 </div>
             </div>
         </div>
@@ -577,7 +587,7 @@
                     <div class="step-number">6</div>
                     <div class="step-content">
                         <h3>התחברות</h3>
-                        <p>הזינו את פרטי ההתחברות שקיבלתם מארגון חמ״ל והתחילו לנהל הסעות.</p>
+                        <p>הזינו את פרטי ההתחברות שקיבלתם מארגון חמ״ל והתחילו לנהל שינועים.</p>
                     </div>
                 </div>
             </div>
@@ -593,7 +603,7 @@
         <div class="container">
             <p style="font-size: 17px; font-weight: 600; margin-bottom: 15px;">Hamal Transport Management System</p>
             <p>פותח עבור <a href="https://www.hamal.org.il">ארגון חמ״ל - אחים ואחיות לישראל</a></p>
-            <p style="margin-top: 25px; opacity: 0.7; font-size: 14px;">© 2024 כל הזכויות שמורות</p>
+            <p style="margin-top: 25px; opacity: 0.7; font-size: 14px;">© 2025 כל הזכויות שמורות</p>
         </div>
     </footer>
 </body>
