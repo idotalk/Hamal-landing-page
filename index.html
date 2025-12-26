@@ -15,6 +15,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: #f8fafc;
+            color: #1a1a1a;
+            line-height: 1.6;
         }
 
         .container {
@@ -23,10 +25,11 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
             background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -38,62 +41,21 @@
             align-items: center;
         }
 
-        .header-right-group {
+        .header-left {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
         }
 
         .logo-img {
-            height: 90px;
+            height: 55px;
             width: auto;
-            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-menu {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 19px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover {
-            color: #4a90e2;
-        }
-
-        .header-left-group {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .donate-btn {
-            background: #00b4d8;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .donate-btn:hover {
-            background: #0096c7;
-            transform: translateY(-2px);
+        .logo-img:hover {
+            opacity: 0.85;
         }
 
         .social-links {
@@ -106,30 +68,502 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            transition: transform 0.3s;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
         .social-links a:hover {
             transform: scale(1.1);
         }
 
-        .social-links a.facebook { background: #3b5998; }
-        .social-links a.linkedin { background: #0077b5; }
-        .social-links a.instagram { background: #405de6; }
+        .social-links a.facebook {
+            background: #3b5998;
+        }
+
+        .social-links a.linkedin {
+            background: #0077b5;
+        }
+
+        .social-links a.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
 
         .social-links svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: white;
         }
 
-        @media (max-width: 992px) {
-            .nav-menu { display: none; }
-            .logo-img { height: 65px; }
-            .header-right-group { gap: 15px; }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .lang-switch span {
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: color 0.3s;
+        }
+
+        .lang-switch span:hover {
+            color: #4a90e2;
+        }
+
+        .lang-switch .divider {
+            color: #d1d5db;
+            cursor: default;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #4a90e2;
+        }
+
+        .donate-btn {
+            background: #00b4d8;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .donate-btn:hover {
+            background: #0096c7;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(74, 144, 226, 0.75) 50%, rgba(59, 130, 246, 0.85) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+            padding: 80px 20px;
+            margin-top: -60px;
+            border-radius: 24px 24px 0 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 -10px 40px rgba(74, 144, 226, 0.12);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .download-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .download-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border: 1px solid #e0f2fe;
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.08);
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #2563eb, #6366f1);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .download-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .download-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
+            border-color: #bfdbfe;
+        }
+
+        .download-card h3 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .download-card p {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .download-badge {
+            width: 240px;
+            height: 72px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .download-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .version-info {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .coming-soon-badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f97316 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #dbeafe;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.2);
+            border-color: #93c5fd;
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+        }
+
+        .feature-icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+            filter: grayscale(20%);
+        }
+
+        .feature-card h3 {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Tutorial Section */
+        .tutorial-section {
+            background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+            padding: 100px 20px;
+        }
+
+        .tutorial-steps {
+            max-width: 900px;
+            margin: 60px auto 0;
+            display: grid;
+            gap: 24px;
+        }
+
+        .step {
+            display: flex;
+            align-items: start;
+            gap: 28px;
+            padding: 36px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #fde68a;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(245, 158, 11, 0.1);
+        }
+
+        .step:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+            border-color: #fbbf24;
+            transform: translateX(-4px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+            color: white;
+            min-width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+        }
+
+        .step-content h3 {
+            color: #1a1a1a;
+            font-size: 19px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .step-content p {
+            color: #4b5563;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .step-content strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .info-box {
+            padding: 24px 28px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-color: #fbbf24;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+        }
+
+        .warning-box strong {
+            color: #92400e;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .warning-box p {
+            color: #92400e;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+
+        .tip-box strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .tip-box p {
+            color: #1e40af;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #e5e7eb;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #93c5fd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .header-right {
+                gap: 15px;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .download-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px;
+            }
+
+            .step-number {
+                margin: 0 auto;
+            }
+
+            .download-badge {
+                width: 220px;
+                height: 66px;
+            }
         }
     </style>
 </head>
@@ -151,10 +585,9 @@
                             <li><a href="https://www.hamal.org.il/contact">צור קשר</a></li>
                         </ul>
                     </nav>
-                    
+                    <a href="https://www.hamal.org.il/donate" class="donate-btn">לתרומה</a>
                 </div>
                 <div class="header-left">
-                    <a href="https://www.hamal.org.il/donate" class="donate-btn">לתרומה</a>
                     <div class="social-links">
                         <a href="https://www.facebook.com/hamalezrahi" class="facebook" target="_blank"
                             aria-label="Facebook">
